@@ -1,0 +1,103 @@
+.header {
+  background: linear-gradient(180deg, #3B0943 -14.66%, #201D27 100%);
+  mix-blend-mode: normal;
+  padding-bottom: 80px;
+  height: 100vh;
+
+  &__inner {
+    display: flex;
+    padding: 25px;
+    align-items: center;
+    position: relative;
+  }
+
+  &__nav {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, rgba(10, 6, 18, 0.4) 0%, rgba(11, 7, 18, 0.4) 6.36%, rgba(24, 14, 23, 0.4) 101.81%);
+
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+
+  &__menu-list {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+
+  }
+
+  &__menu-item:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__menu-link {
+    @extend %roboto-400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #F4F4F4;
+  }
+
+  &__btn-bottom {
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    animation: btndrag infinite 2s;
+  }
+}
+
+@keyframes btndrag {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+
+  &__wrapper {
+    max-width: 520px
+  }
+
+  &__title {
+    @extend %roboto-700;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #E7E4E4;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+    padding-top: 120px;
+  }
+
+  &__description {
+    @extend %roboto-400;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    font-variant: small-caps;
+    color: #F4F4F4;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+  }
+
+}
