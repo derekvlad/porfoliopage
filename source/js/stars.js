@@ -25,11 +25,12 @@ function bdCanvas() {
 
     function windowResize() {
         clearTimeout(check);
+        arrStars.length = 0;
         check = setTimeout(function () {
             clearInterval(animations);
             resizeCanvas();
             setup();
-            arrStars.length = 0;
+            
         }, 100)
     }
 
