@@ -1,0 +1,86 @@
+.skills {
+    background-color: #000000;
+    padding: 50px 0;
+    position: relative;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 45px;
+    }
+
+    &__item {
+        background: rgba(118, 118, 118, 0.2);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(21px);
+        border-radius: 10px;
+        padding: 22px 22px 55px;
+        position: relative;
+        overflow: hidden;
+        z-index: 4;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(260.25deg, #5B085C 2.04%, #070544 99.11%);
+            transform: translate(-700px, -231px) rotate(62deg);
+            width: 200px;
+            height: 500px;
+            transition: all .3s;
+            z-index: -1;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(260.25deg, #5B085C 2.04%, #070544 99.11%);
+            transform: translate(739px, -83px) rotate(-118deg);
+            width: 200px;
+            height: 500px;
+            transition: all .3s;
+            z-index: -1;
+        }
+    }
+
+    &__item-title {
+        @extend %roboto-700;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 11px;
+        position: relative;
+        z-index: 12;
+    }
+
+    &__item-descr {
+        @extend %roboto-400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        max-width: 300px;
+        position: relative;
+        z-index: 12;
+    }
+}
+
+.skills__item:hover {
+    &::before {
+        transform: translate(-7px, -231px) rotate(62deg);
+        z-index: 1;
+    }
+
+    &::after {
+        transform: translate(139px, -83px) rotate(-118deg);
+        z-index: 1;
+    }
+
+}

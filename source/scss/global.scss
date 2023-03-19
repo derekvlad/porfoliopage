@@ -8,8 +8,19 @@ html {
   box-sizing: inherit;
 }
 
-.container{
+.container {
   max-width: 1210px;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+.title {
+  @extend %roboto-700;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
 }

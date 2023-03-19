@@ -1,7 +1,7 @@
 .header {
   background: linear-gradient(180deg, #3B0943 -14.66%, #201D27 100%);
   mix-blend-mode: normal;
-  padding-bottom: 80px;
+  
   height: 100vh;
 
   &__inner {
@@ -50,6 +50,7 @@
     margin: 0 auto;
     cursor: pointer;
     animation: btndrag infinite 2s;
+    
   }
 }
 

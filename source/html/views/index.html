@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,13 +14,34 @@
     }
   </script>
 </head>
-<body>
-<!--header.html-->
-<%= _.template(require('../includes/common/header.html').default)({version: htmlWebpackPlugin.options.custom.version,}) %>
-<main>
- 
-</main>
-<!--footer.html-->
-<%= _.template(require('../includes/common/footer.html').default)({}) %>
+
+<body class="body">
+  <!--header.html-->
+  <%= _.template(require('../includes/common/header.html').default)({version:
+    htmlWebpackPlugin.options.custom.version,}) %>
+    <main>
+      <%= _.template(require('../includes/index/skills.html').default)({}) %>
+    </main>
+    <!--footer.html-->
+    <%= _.template(require('../includes/common/footer.html').default)({}) %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+      <script>
+        VANTA.NET({
+          el: ".header",
+
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 250.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x603fff,
+          backgroundColor: 0x0,
+          spacing: 14.00
+        })
+      </script>
 </body>
+
 </html>
