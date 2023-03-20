@@ -1,5 +1,11 @@
 html {
   box-sizing: border-box;
+  
+  
+}
+body{
+  width: 100%;
+  overflow: hidden;
 }
 
 *,
@@ -12,6 +18,9 @@ html {
   max-width: 1210px;
   margin: 0 auto;
   padding: 0 10px;
+  
+  
+  
 }
 
 .title {

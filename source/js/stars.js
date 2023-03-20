@@ -30,7 +30,7 @@ function bdCanvas() {
             clearInterval(animations);
             resizeCanvas();
             setup();
-            
+           
         }, 100)
     }
 
@@ -85,6 +85,10 @@ function bdCanvas() {
         }, opts.delay);
     }
 
+    
+
+   
+    
 }; window.onload = function () {
     bdCanvas();
 };

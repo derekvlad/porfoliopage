@@ -3,6 +3,15 @@
     padding: 50px 0;
     position: relative;
 
+    &__title {
+        position: relative;
+        z-index: 2;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 100px;
+
+    }
+
     &__items {
         display: flex;
         justify-content: space-between;
@@ -11,9 +20,13 @@
     }
 
     &__item {
-        background: rgba(118, 118, 118, 0.2);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(21px);
+        background: linear-gradient(180deg, rgba(36, 16, 32, 0.42) -26.25%, rgba(36, 16, 32, 0) 117.5%);
+        border: 1px solid #360E2D;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        backdrop-filter: blur(21.5px);
+        
+        /* Note: backdrop-filter has minimal browser support */
+
         border-radius: 10px;
         padding: 22px 22px 55px;
         position: relative;
@@ -53,7 +66,7 @@
         line-height: 38px;
         text-align: center;
         text-transform: uppercase;
-        color: #000000;
+        color: #4e4e4e;
         margin-bottom: 11px;
         position: relative;
         z-index: 12;
@@ -65,7 +78,7 @@
         line-height: 19px;
         text-align: center;
         text-transform: uppercase;
-        color: #000000;
+        color: #4e4e4e;
         max-width: 300px;
         position: relative;
         z-index: 12;
@@ -73,6 +86,8 @@
 }
 
 .skills__item:hover {
+    color: #fff;
+
     &::before {
         transform: translate(-7px, -231px) rotate(62deg);
         z-index: 1;
@@ -83,4 +98,38 @@
         z-index: 1;
     }
 
+}
+.skills__item:hover{
+    animation: shiver linear 1s;
+    
+}
+.skills__item:hover .skills__item-title {
+    transition: all 1s;
+    color: #fff;
+}
+
+.skills__item:hover .skills__item-descr {
+    transition: all 1s;
+    color: #fff;
+}
+@keyframes shiver{
+    0%{
+        transform: scale(1.01);
+    }
+    25%{
+        transform: translateX(-1px);
+        
+    }
+    50%{
+        transform: translateX(1px);
+        
+    }
+    75%{
+        transform: translateX(-1px);
+        
+    }
+    100%{
+        transform: translateX(1px);
+        
+    }
 }

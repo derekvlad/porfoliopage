@@ -1,4 +1,4 @@
-.header-content__btn-link {
+.btn {
     @extend %roboto-400;
     font-size: 24px;
     line-height: 28px;
@@ -15,6 +15,7 @@
     position: relative;
     overflow: hidden;
     transition: all .5s;
+    opacity: 0.8;
 
     
 
@@ -35,9 +36,12 @@
     }
 
 }
-.header-content__btn-link:hover{
+.btn:hover{
+    animation: shiver linear 1s;
+    opacity: 1;
     &::before{
         transform: translateX(200px) rotate(-45deg);
+
     }
 }
 @keyframes btn {
