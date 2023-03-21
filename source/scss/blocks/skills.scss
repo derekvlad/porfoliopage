@@ -1,12 +1,13 @@
 .skills {
-    background-color: #000000;
+   
     padding: 50px 0;
     position: relative;
     overflow: hidden;
+    
 
     &__title {
         position: relative;
-        z-index: 2;
+        z-index: 23;
         display: block;
         margin: 0 auto;
         margin-bottom: 100px;
@@ -18,6 +19,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 45px;
+        z-index: 23;
     }
 
     &__item {

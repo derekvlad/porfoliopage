@@ -1,0 +1,101 @@
+.portfolio {
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 23;
+
+    &__title {
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    &__btn-filter {
+        margin: 0 auto;
+        max-width: 350px;
+        background: linear-gradient(90deg, rgba(10, 6, 18, 0.4) 0%, rgba(11, 7, 18, 0.4) 6.36%, rgba(24, 14, 23, 0.4) 101.81%);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__btn {
+        border: none;
+        background: linear-gradient(180deg, rgba(104, 71, 107, 0.19) 0%, rgba(63, 29, 53, 0.19) 100%);
+        border: 1px solid rgba(61, 48, 61, 0.041);
+        border-radius: 9px;
+        color: #fff;
+        @extend %roboto-400;
+        font-size: 14px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+
+        span {
+            position: relative;
+            z-index: 4;
+        }
+    }
+
+    &__btn::before {
+        position: absolute;
+        content: '';
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: radial-gradient(66% 66% at 50% 31%, rgba(93, 14, 131, 0.67) 0%, rgba(186, 12, 169, 0.402) 100%);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.34);
+        transition: all 0.5s;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.portfolio__btn:hover {
+    &::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.portfolio__filter-inner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    transition: all 1s;
+    margin: 0 auto;
+}
+
+.portfolio__filter-item {
+    width: 350px;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(36, 16, 32, 0.42) -26.25%, rgba(36, 16, 32, 0) 117.5%);
+    border: 1px solid #360E2D;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    -webkit-backdrop-filter: blur(21.5px);
+    backdrop-filter: blur(21.5px);
+    border-radius: 10px;
+    padding: 22px 22px 55px;
+    transition: all 1s;
+
+}
+@media (max-width:869px) {
+    .portfolio__filter-inner{
+        flex-direction: column;
+        align-items: center;
+    }
+    .portfolio__filter-item{
+        max-width: 100%;
+        
+    }
+}

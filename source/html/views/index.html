@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="description" content="HTML5 webpack boilerplate" />
-  <title>HTML5 webpack boilerplate</title>
+  <title>DEREK</title>
   <link rel="stylesheet" href="/vendors/normalize-css/normalize.min.css" />
   <script>
     if (!window.HTMLPictureElement) {
@@ -14,13 +14,23 @@
     }
   </script>
 </head>
+<div class="loader-wrapper">
+  <div class="loader">
+  </div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
 
 <body class="body">
+  
   <!--header.html-->
   <%= _.template(require('../includes/common/header.html').default)({version:
     htmlWebpackPlugin.options.custom.version,}) %>
     <main>
+      <canvas class="bdCanvas" id="bdCanvas"></canvas>
       <%= _.template(require('../includes/index/skills.html').default)({}) %>
+      <%= _.template(require('../includes/index/portfolio.html').default)({}) %>
+    
     </main>
     <!--footer.html-->
     <%= _.template(require('../includes/common/footer.html').default)({}) %>

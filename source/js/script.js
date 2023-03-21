@@ -81,19 +81,13 @@ VANTA.NET({
 
 
 
-function resizeHeader() {
-    let positionWidth = headerScreen.clientWidth
-    console.log(positionWidth)
-    if (positionWidth <= "480") {
-        const canvasVanta = document.querySelector('.vanta-canvas')
-        canvasVanta.style.display = "none"
-    }
-    if (positionWidth >= "480") {
-        const canvasVanta = document.querySelector('.vanta-canvas')
-        canvasVanta.style.display = "block"
-    }
-}
 
-window.addEventListener("resize", function () {
-    resizeHeader()
-})
+
+
+
+//prealoder 
+
+window.addEventListener('load',function(){
+    document.querySelector('body').classList.add("loaded")  
+  });
+  

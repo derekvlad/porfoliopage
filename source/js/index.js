@@ -2,3 +2,4 @@
 
 import './script';
 import './stars';
+import './filter';

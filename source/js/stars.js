@@ -7,11 +7,15 @@ function bdCanvas() {
         delay: 90,
         step: 0.1
     }
+    let canvas = document.querySelector('[id="bdCanvas"]');
+    const headerScreen = document.querySelector('.header')
+    let positionHeight = window.screen.height
 
-    let canvas = document.querySelector("#bdCanvas");
+    canvas.style.height = positionHeight + 'px'
+
+    console.log()
 
     resizeCanvas();
-
     function resizeCanvas() {
         w = canvas.width = window.innerWidth;
         h = canvas.height = window.innerHeight;
@@ -30,7 +34,7 @@ function bdCanvas() {
             clearInterval(animations);
             resizeCanvas();
             setup();
-           
+
         }, 100)
     }
 
@@ -85,10 +89,10 @@ function bdCanvas() {
         }, opts.delay);
     }
 
-    
 
-   
-    
+
+
+
 }; window.onload = function () {
     bdCanvas();
 };
