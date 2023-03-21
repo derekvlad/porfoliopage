@@ -15,19 +15,7 @@ menuBtn.addEventListener('click', () => {
     }
 })
 
-// linkItem.forEach(item =>{
-//     item.addEventListener('click',()=>{
-//         headerNav.classList.remove('header__nav--active')
-//         menuBtn.classList.remove('menu__btn--active')
-//         let linkId = item.childNodes
-//         console.log("linklinkId" ,linkId)
 
-//         linkId.forEach(link =>{
-//         //    let link.ATTRIBUTE_NODE
-
-//         })
-//     })
-// })
 
 
 
@@ -48,18 +36,18 @@ headerBtn.addEventListener('click', () => {
 const linkMenu = document.querySelectorAll('.header__menu-link');
 
 linkMenu.forEach(item => {
-   
+
     item.addEventListener("click", (e) => {
         e.preventDefault()
         linkData = item.getAttribute('href').substring(1)
         console.log(linkData)
         let block = document.querySelector(`.${linkData}`)
-        
+
         block.scrollIntoView({
-            block: 'end', // к ближайшей границе экрана
+            block: 'nearest', // к ближайшей границе экрана
             behavior: 'smooth',
         });
-    
+
     })
 
 
@@ -78,7 +66,6 @@ headerScreen.style.height = positionHeight + 'px'
 //options VANTA
 VANTA.NET({
     el: ".header",
-
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
@@ -88,5 +75,25 @@ VANTA.NET({
     scaleMobile: 1.0,
     color: 0x603fff,
     backgroundColor: 0x0,
-    spacing: 14.00
+    spacing: 14.00,
+    
+})
+
+
+
+function resizeHeader() {
+    let positionWidth = headerScreen.clientWidth
+    console.log(positionWidth)
+    if (positionWidth <= "480") {
+        const canvasVanta = document.querySelector('.vanta-canvas')
+        canvasVanta.style.display = "none"
+    }
+    if (positionWidth >= "480") {
+        const canvasVanta = document.querySelector('.vanta-canvas')
+        canvasVanta.style.display = "block"
+    }
+}
+
+window.addEventListener("resize", function () {
+    resizeHeader()
 })
