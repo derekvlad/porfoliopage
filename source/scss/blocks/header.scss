@@ -51,7 +51,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -30%;
+    
     
   }
 }
@@ -175,5 +175,8 @@
   }
   .header-content__image-wrapper{
     display: none;
+  }
+  .header__btn-bottom{
+    bottom: -30%;
   }
 }

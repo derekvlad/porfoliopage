@@ -7,13 +7,19 @@
     height: 50px;
     cursor: pointer;
     z-index: 23;
-    background: linear-gradient(90deg, rgba(10, 6, 18, 0.4) 0%, rgba(11, 7, 18, 0.4) 6.36%, rgba(24, 14, 23, 0.4) 101.81%);
+    background: linear-gradient(180deg, rgba(104, 71, 107, 0.19) 0%, rgba(150, 102, 136, 0.19) 100%);
+    border: 1px solid rgba(106, 88, 107, 0.2);
+    
+    /* Note: backdrop-filter has minimal browser support */
+    
+
     padding: 5px;
     border-radius: 9px;
 
     &-line {
+        z-index: 24;
         background: linear-gradient(180deg, rgba(36, 16, 32, 0.42) -26.25%, rgba(36, 16, 32, 0) 117.5%);
-        border: 1px solid #360E2D;
+        border: 1px solid #4b4048;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         backdrop-filter: blur(21.5px);
         display: block;
@@ -85,6 +91,8 @@
 }
 .menu__btn.menu__btn--active{
     background: transparent;
+}.menu__btn.menu__btn--active >.menu__btn-line{
+    border: none;
 }
 .menu__btn.menu__btn--active >.menu__btn-line:nth-child(1){
     transition: all 0.8s;
