@@ -58,7 +58,7 @@ linkMenu.forEach(item => {
 //fix height VANTA
 const headerScreen = document.querySelector('.header')
 let positionHeight = window.screen.height
-console.log(positionHeight)
+
 headerScreen.style.height = positionHeight + 'px'
 
 
@@ -100,17 +100,18 @@ const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((
 const input = document.querySelector('#email');
 
 function onInput() {
-    if (isEmailValid(input.value)) {
-        input.style.borderColor = 'green';
-    } else {
-        input.style.borderColor = 'red';
-    }
+  if (isEmailValid(input.value)) {
+    input.style.borderColor = 'green';
+  } else {
+    input.style.borderColor = 'red';
+  }
 }
 
 input.addEventListener('input', onInput);
 
 function isEmailValid(value) {
-    return EMAIL_REGEXP.test(value);
+return EMAIL_REGEXP.test(value);
 }
+
 
 

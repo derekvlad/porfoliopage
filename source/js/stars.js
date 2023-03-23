@@ -8,8 +8,8 @@ function bdCanvas() {
         step: 0.1
     }
     let canvas = document.querySelector('[id="bdCanvas"]');
-    
-    let positionHeight = document.documentElement.clientHeight
+    const headerScreen = document.querySelector('.header')
+    let positionHeight = window.screen.height
     console.log(positionHeight)
 
     canvas.style.height = positionHeight + 'px'
@@ -33,6 +33,7 @@ function bdCanvas() {
         arrStars.length = 0;
         check = setTimeout(function () {
             clearInterval(animations);
+            
             resizeCanvas();
             setup();
 

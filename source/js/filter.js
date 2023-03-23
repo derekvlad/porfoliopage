@@ -17,7 +17,7 @@ function filter() {
                     element.style.opacity = "1"
                     element.style.pointerEvents = "all"
                     element.style.position = "relative"
-                    element.style.transform = "translateX(0)"
+                    element.style.transform = "translateX(0%)"
                     filterWrap.style.justifyContent = 'space-around'
                 })
             } else {
@@ -25,11 +25,11 @@ function filter() {
                     item.style.opacity = "1"
                     item.style.pointerEvents = "all"
                     item.style.position = "relative"
-                    item.style.transform = "translateX(0)"
+                    item.style.transform = "translateX(0%)"
                     if(window.screen.width <= 1200){
                         filterWrap.style.justifyContent = 'space-around'
                     }else{
-                        filterWrap.style.justifyContent = 'flex-start'
+                        filterWrap.style.justifyContent = 'flex-start'  
                     }
                     
                 })
@@ -37,4 +37,4 @@ function filter() {
         })
     })
 }
-requestAnimationFrame(filter, 1000)
+filter()
