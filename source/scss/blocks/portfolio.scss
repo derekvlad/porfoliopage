@@ -77,7 +77,7 @@
 }
 
 .portfolio__filter-item {
-    width: 350px;
+    width: 320px;
     height: 250px;
     background: linear-gradient(180deg, rgba(36, 16, 32, 0.42) -26.25%, rgba(36, 16, 32, 0) 117.5%);
     border: 1px solid #360E2D;
@@ -89,10 +89,18 @@
     transition: all 1s;
 
 }
-@media (max-width:869px) {
+@media (max-width:786px) {
+    
+    .portfolio__filter-item{
+        max-width: 100%;
+        
+    }
+}
+@media (max-width:480px) {
     .portfolio__filter-inner{
         flex-direction: column;
         align-items: center;
+        
     }
     .portfolio__filter-item{
         max-width: 100%;
