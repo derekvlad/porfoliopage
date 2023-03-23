@@ -76,7 +76,7 @@ VANTA.NET({
     color: 0x603fff,
     backgroundColor: 0x0,
     spacing: 14.00,
-    
+
 })
 
 
@@ -87,7 +87,80 @@ VANTA.NET({
 
 //prealoder 
 
-window.addEventListener('load',function(){
-    document.querySelector('body').classList.add("loaded")  
-  });
-  
+window.addEventListener('load', function () {
+    document.querySelector('body').classList.add("loaded")
+});
+
+
+
+//Validation
+
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+const input = document.querySelector('#email');
+
+function onInput() {
+  if (isEmailValid(input.value)) {
+    input.style.borderColor = 'green';
+  } else {
+    input.style.borderColor = 'red';
+  }
+}
+
+input.addEventListener('input', onInput);
+
+function isEmailValid(value) {
+return EMAIL_REGEXP.test(value);
+}
+
+
+
+const vantaCanvas = document.querySelector('.vanta-canvas')
+let frameCount = function _fc(fastTimeStart, preciseTimeStart){
+        
+    let now = performance.now();
+    
+    let fastDuration = now - (fastTimeStart || _fc.startTime);
+    let preciseDuration = now - (preciseTimeStart || _fc.startTime);
+    
+    if(fastDuration < 100){
+        
+        _fc.fastCounter++;
+        
+    } else {
+        
+        _fc.fastFPS = _fc.fastCounter * 10;
+        _fc.fastCounter = 0;
+        fastTimeStart = now;
+        console.log(_fc.fastFPS);
+    }
+    
+    if(preciseDuration < 1000){
+        
+        _fc.preciseCounter++;
+        
+    } else {
+                  
+        _fc.preciseFPS = _fc.preciseCounter;
+        _fc.preciseCounter = 0;
+        preciseTimeStart = now; 
+        console.log(_fc.preciseFPS);
+
+        
+
+        if (_fc.preciseFPS <= '30'){
+            vantaCanvas.style.display = "none"
+        }else{
+            vantaCanvas.style.display = "block"
+        }
+    }
+    requestAnimationFrame(() => frameCount(fastTimeStart, preciseTimeStart)); 
+}
+
+frameCount.fastCounter = 0;
+frameCount.fastFPS = 0;
+frameCount.preciseCounter = 0;
+frameCount.preciseFPS = 0;
+frameCount.startTime = performance.now();
+
+frameCount() 

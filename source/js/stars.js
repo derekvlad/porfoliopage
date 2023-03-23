@@ -4,16 +4,17 @@ function bdCanvas() {
         minRadius: 0.5,
         maxRadius: 1.4,
         colors: ["rgba(255, 255, 255, 0.7)", "rgba(252, 244, 201, 0.7)", "rgba(201, 252, 201, 0.7)", "rgba(201, 236, 252, 0.7)", "rgba(229, 201, 252, 0.7)", "rgba(252, 201, 201, 0.7)", "rgba(252, 201, 241, 0.7)", "rgba(252, 201, 201, 0.7)"],
-        delay: 90,
+        delay: 100,
         step: 0.1
     }
     let canvas = document.querySelector('[id="bdCanvas"]');
     const headerScreen = document.querySelector('.header')
     let positionHeight = window.screen.height
+    console.log(positionHeight)
 
     canvas.style.height = positionHeight + 'px'
 
-    console.log()
+
 
     resizeCanvas();
     function resizeCanvas() {
@@ -32,12 +33,13 @@ function bdCanvas() {
         arrStars.length = 0;
         check = setTimeout(function () {
             clearInterval(animations);
+            
             resizeCanvas();
             setup();
 
         }, 100)
     }
-
+ 
     let ctx = canvas.getContext("2d");
 
     Stars = function (w, h) {
@@ -74,7 +76,8 @@ function bdCanvas() {
             arrStars.push(new Stars(w, h));
             arrStars[i].draw();
         }
-        loop()
+       
+        requestAnimationFrame(loop);
     }
 
     setup();

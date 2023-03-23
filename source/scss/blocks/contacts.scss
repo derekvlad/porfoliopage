@@ -1,0 +1,153 @@
+.contacts {
+    position: relative;
+    z-index: 4;
+    color: #fff;
+    padding: 50px 0;
+
+    &__title {
+
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    &__inner {
+        background: linear-gradient(111.47deg, rgba(36, 16, 32, 0.54) 1.94%, rgb(77, 12, 73) 105.3%);
+        filter: drop-shadow(8px 11px 15px rgba(12, 4, 12, 0.25));
+        backdrop-filter: blur(25px);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    &__item {
+        padding: 55px 0 0 35px;
+        position: relative;
+    }
+
+    &__img {
+        position: absolute;
+
+    }
+
+    &__title-social {
+        margin-left: 60px;
+        @extend %roboto-400;
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+    }
+
+    &__link {
+        margin-left: 60px;
+        @extend %roboto-400;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: lowercase;
+        color: #fff;
+    }
+
+    &__form {
+        background: rgba(0, 0, 0, 0.63);
+        box-shadow: -13px -4px 15px rgba(12, 4, 12, 0.25);
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        padding: 54px 103px 33px 70px;
+        position: relative;
+        z-index: 40;
+        max-width: 800px;
+        flex: auto;
+        label{
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        background: rgba(45, 32, 121, 0.34);
+        border: 1px solid #2A1A37;
+        backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        margin-bottom: 25px;
+        padding: 16px 25px;
+        @extend %roboto-400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #fff;
+        outline: none;
+
+        &::placeholder {
+            @extend %roboto-400;
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: capitalize;
+            color: #F4F4F4;
+        }
+    }
+
+    &__textarea {
+        display: block;
+        resize: none;
+        width: 100%;
+        height: 150px;
+        background: rgba(45, 32, 121, 0.34);
+        border: 1px solid #2A1A37;
+        backdrop-filter: blur(14.5px);
+        border-radius: 10px;
+        margin-bottom: 25px;
+        padding: 16px 25px;
+        @extend %roboto-400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #fff;
+        outline: none;
+        &::placeholder {
+            @extend %roboto-400;
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: capitalize;
+            color: #F4F4F4;
+        }
+    }
+
+    &__btn {
+        border: none;
+    }
+}
+
+@media (max-width:786px) {
+    .contacts__inner{
+        display: block;
+    }
+    .contacts__wrapper{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+        padding: 25px;
+    }
+    .contacts__item{
+        padding: 0;
+    }
+    .contacts__item:not(:last-child){
+        margin-right: 25px;
+    }
+    .contacts__form{
+        padding: 43px 25px 33px 25px;
+    }
+}
+@media (max-width:786px){
+    .contacts__wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        padding: 25px;
+    }
+    .contacts__item:not(:last-child){
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
