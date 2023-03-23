@@ -142,7 +142,7 @@ let frameCount = function _fc(fastTimeStart, preciseTimeStart) {
     _fc.preciseCounter = 0;
     preciseTimeStart = now;
     console.log(_fc.preciseFPS);
-    if (_fc.preciseFPS <= '30') {
+    if (_fc.preciseFPS <= '15') {
       vantaCanvas.style.display = "none";
     } else {
       vantaCanvas.style.display = "block";
