@@ -27,9 +27,6 @@
         border: 1px solid #360E2D;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         backdrop-filter: blur(21.5px);
-        
-        /* Note: backdrop-filter has minimal browser support */
-
         border-radius: 10px;
         padding: 22px 22px 55px;
         position: relative;
@@ -140,5 +137,27 @@
 @media (max-width: 786px){
     .skills__item{
         margin: 0 auto;
+        pointer-events: none;
+    }
+    .skills__item {
+        color: #fff;
+    
+        &::before {
+            transform: translate(-7px, -231px) rotate(62deg);
+            z-index: 1;
+        }
+    
+        &::after {
+            transform: translate(139px, -83px) rotate(-118deg);
+            z-index: 1;
+        }
+    
+    }
+    .skills__item-title {
+        color: #fff;
+    }
+    
+    .skills__item-descr {
+        color: #fff;
     }
 }

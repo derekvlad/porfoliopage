@@ -140,6 +140,9 @@
     }
 }
 @media (max-width:786px){
+    .contacts__inner {
+        background: linear-gradient(111.47deg, rgba(121, 12, 99, 0.54) 1.94%, rgb(77, 12, 73) 105.3%);
+    }
     .contacts__wrapper{
         flex-direction: column;
         align-items: flex-start;
