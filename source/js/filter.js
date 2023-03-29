@@ -29,7 +29,7 @@ function filter() {
                     if(window.screen.width <= 1200){
                         filterWrap.style.justifyContent = 'space-around'
                     }else{
-                        filterWrap.style.justifyContent = 'flex-start'  
+                        filterWrap.style.justifyContent = 'center'  
                     }
                     
                 })
