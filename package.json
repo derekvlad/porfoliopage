@@ -31,7 +31,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^2.7.3",
     "sass": "^1.59.2",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.23",
     "postcss-loader": "^7.0.2",
     "postcss-scss": "^4.0.6",
     "prettier": "^2.8.4",
